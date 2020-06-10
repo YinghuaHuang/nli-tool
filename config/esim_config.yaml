@@ -1,0 +1,44 @@
+# training hyper-parameters
+num_epochs : 300
+batch_size : 128
+dropout_keep_prob : 0.8
+learning_rate : 0.001
+l2 : 0.0
+seq_length : 100
+early_stop_step : 5000000
+
+# embeddings hyper-parameters
+embedding_size : 300
+
+# layers hyper-parameters
+hidden_size : 300
+
+# report hyper-parameters
+eval_batch : 4292
+
+# IO path
+## embeddings
+vocab_path : ./data/word_sequence/vocab.txt
+embedding_path : ./data/glove/filtered_glove_840B_300d.txt
+
+## train_dataset
+train_premise_file: ./data/word_sequence/premise_snli_1.0_train.txt
+train_hypothesis_file: ./data/word_sequence/hypothesis_snli_1.0_train.txt
+train_label_file: ./data/word_sequence/label_snli_1.0_train.txt
+
+## valid_dataset
+dev_premise_file: ./data/word_sequence/premise_snli_1.0_dev.txt
+dev_hypothesis_file: ./data/word_sequence/hypothesis_snli_1.0_dev.txt
+dev_label_file: ./data/word_sequence/label_snli_1.0_dev.txt
+
+## reports
+save_path : ./ckpt/esim_checkpoint
+best_path : ./ckpt/esim_bestval
+log_path : ./config/log/esim_log
+tfboard_path : ./tensorboard
+
+## train model
+model: esim
+
+## config
+config_path : ./config/esim_config.yaml
